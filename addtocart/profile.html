@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div class="profile-container">
+    <h2>My Profile</h2>
+
+    <div id="userInfo">
+      <h3>User Information</h3>
+      <div class="profile-pic">
+    <img src="https://i.pravatar.cc/100" alt="User" />
+    </div>
+      <p><strong>Name:</strong> <span id="profileName"></span></p>
+      <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+      <button id="logoutBtn">Logout</button>
+    </div>
+
+    <div id="orderHistory">
+      <h3>Order History</h3>
+      <ul id="orderList"></ul>
+    </div>
+
+    <button onclick="location.href='../index.html'"> Back to Home</button>
+  </div>
+
+  <script src="profile.js">
+    
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById('logoutBtn').addEventListener('click', () => {
+    localStorage.removeItem('currentUser');
+    window.location.href = 'login.html';
+  });
+});
+
+  </script>
+</body>
+</html>
+
+ 

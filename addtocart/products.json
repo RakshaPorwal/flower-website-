@@ -1,0 +1,75 @@
+[
+    {
+        "id": 1,
+        "name":"FLOWER",
+        "price": 200,
+        "image": "image/1.png"
+    },
+    {
+        "id": 2,
+        "name":"FLOWER",
+        "price": 250,
+        "image": "image/2.png"
+    },
+    {
+        "id": 3,
+        "name":"FLOWER",
+        "price": 290,
+        "image": "image/3.png"
+    },
+    {
+        "id": 4,
+        "name":"FLOWER",
+        "price": 200,
+        "image": "image/4.png"
+    },
+    {
+        "id": 5,
+        "name":"FLOWER",
+        "price": 300,
+        "image": "image/5.png"
+    },
+    {
+        "id": 6,
+        "name":"FLOWER",
+        "price": 200,
+        "image": "image/10.png"
+    },
+    {
+        "id": 7,
+        "name":"FLOWER",
+        "price": 200,
+        "image": "image/7.png"
+    },
+    {
+        "id": 8,
+        "name":"FLOWER",
+        "price": 200,
+        "image": "image/8.png"
+    },
+    {
+        "id": 9,
+        "name":"FLOWER",
+        "price": 150,
+        "image": "image/9.png"
+    },
+    {
+        "id": 10,
+        "name":"FLOWER",
+        "price": 170,
+        "image": "image/10.png"
+    },
+    {
+        "id": 11,
+        "name":"FLOWER",
+        "price": 190,
+        "image": "image/11.png"
+    },
+    {
+        "id": 12,
+        "name":"FLOWER",
+        "price": 220,
+        "image": "image/12.png"
+    }
+
+]

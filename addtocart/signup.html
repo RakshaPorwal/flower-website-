@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+<div class="auth-container">
+  <h2>Sign Up</h2>
+  <input type="text" placeholder="Full Name" id="signupName" required />
+  <input type="email" placeholder="Email" id="signupEmail" required />
+  <input type="password" placeholder="Password" id="signupPassword" required />
+  <button id="signupBtn" onclick="handleSignup()">Sign Up</button>
+  <p id="signupMsg" style="color:red; margin-top:10px;"></p>
+  <p>Already have an account? <a href="login.html">Login here</a></p>
+</div>
+
+<script>
+function handleSignup() {
+  const name = document.getElementById('signupName').value.trim();
+  const email = document.getElementById('signupEmail').value.trim();
+  const password = document.getElementById('signupPassword').value;
+
+  if (!name || !email || !password) {
+    document.getElementById('signupMsg').innerText = "⚠️ All fields are required.";
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+  if (users.some(user => user.email === email)) {
+    document.getElementById('signupMsg').innerText = "❌ Email already registered.";
+    return;
+  }
+
+  users.push({ name, email, password });
+  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('currentUser', JSON.stringify({ name, email }));
+
+  alert('✅ Signup successful!');
+  window.location.href = 'profile.html';
+}
+</script>
+
+</body>
+</html>

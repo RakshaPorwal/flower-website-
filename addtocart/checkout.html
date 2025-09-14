@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="checkout.css" />
+</head>
+<body>
+
+  <div class="checkout-container">
+    <h2>🛒 Checkout Page</h2>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+      <h3>Your Cart:</h3>
+      <ul id="cartItemsList"></ul>
+      <p><strong>Total:</strong> ₹<span id="cartTotal">0</span></p>
+    </div>
+
+    <!-- Checkout Form -->
+    <form id="checkoutForm">
+      <h3>Enter Shipping Info</h3>
+      <input type="text" id="fullName" placeholder="Full Name" required readonly>
+      <input type="email" id="email" placeholder="Email" required readonly>
+      <textarea id="address" placeholder="Shipping Address" required></textarea><br><br>
+
+      <h3>Select Payment Method</h3>
+      <select id="paymentMethod" required>
+          <option value="" disabled selected>Select method</option>
+          <option value="card">💳 Credit/Debit Card</option>
+          <option value="upi">📱 UPI</option>
+          <option value="cod">🚚 Cash on Delivery</option>
+        </select>
+        
+
+      <!-- Payment Fields Rendered Here -->
+      <div id="paymentDetails"></div>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <p id="msg"></p>
+    <button id="backBtn" onclick="location.href='product.html'" style="display: none;">⬅️ Back to Products</button>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

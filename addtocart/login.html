@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="auth.css" />
+</head>
+<body>
+
+  <div class="auth-container">
+    <h2>Login</h2>
+
+    <!-- ✅ Add a proper form with an ID -->
+    <form id="loginForm">
+      <input type="email" placeholder="Email" id="loginEmail" required />
+      <input type="password" placeholder="Password" id="loginPassword" required />
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("loginEmail").value.trim();
+      const password = document.getElementById("loginPassword").value.trim();
+
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+
+      const matchedUser = users.find(user => user.email === email && user.password === password);
+
+      if (matchedUser) {
+        localStorage.setItem("currentUser", JSON.stringify(matchedUser));
+
+        // Redirect
+        const redirectUrl = localStorage.getItem("redirectTo") || "product.html";
+        localStorage.removeItem("redirectTo");
+        window.location.href = redirectUrl;
+      } else {
+        alert("❌ Invalid email or password");
+      }
+    });
+  </script>
+</body>
+</html>
